@@ -6,6 +6,7 @@
     "discord"
   ],
   "repository": "https://github.com/Qusaiiii/discord-bot",
+  "clone": "https://github.com/Qusaiiii/clone",
   "env": {
     "BOT_TOKEN": {
       "description": "اكتب توكن البوت هنا",
