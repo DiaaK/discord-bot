@@ -306,42 +306,35 @@ function play(guild, song) {
 }
 });
 
-  client.on('message', message => {//help msg
-  if (message.author.bot) return;
-   if (message.content === prefix + "help") {
-      message.react("☑")            
+ client.on('message', message => {
+     if (message.content === prefix +"help") {
+    const embed = new Discord.RichEmbed()
+     .setColor("RANDOM")
+     .addField(`**__Music Commands | اوامر الموسيقى__**`,`
 
-   
+     **${prefix}play** → امر تشغيل الأغنية , !شغل الرابط او اسم الأعنية
 
+     **${prefix}stop** → ايقاف الاغنية 
 
-      message.author.sendMessage(`
+     **${prefix}queue** → قائمة الانتظار
 
-     __**اوامر البوت**__
+     **${prefix}np** → الاغنية الحالية
 
-**${prefix}play**
-امر تشغيل الأغنية , !شغل الرابط او اسم الأعنية
-**${prefix}stop**
-ايقاف الاغنية 
-**${prefix}skip**     
-امر تخطي الاغنية
-**${prefix}queue**
-قائمة الانتظار
-**${prefix}np**
-الاغنية الحالية
-**${prefix}vol**
-تغير مستوى الصوت 1 - 100
-**${prefix}pause**
-ايقاف الاغنية مؤقتا 
-**${prefix}resume**
-امر تكملة الاغنية
-   
-     prefix = **${prefix}**
-     ping = **${Date.now() - message.createdTimestamp}**
+     **${prefix}vol** → تغير مستوى الصوت 1 - 100
 
-`);
+     **${prefix}pause** → ايقاف الاغنية مؤقتا 
 
-}
-});
+     **${prefix}resume** → أمر تكملة الاغنية
+
+     **${prefix}skip** → امر تخطي الاغنية
+
+`)
+
+      message.channel.send({embed});
+     }
+}); 
+
+ 
 
 client.on('message', message => {
   if (!message.content.startsWith(prefix)) return;
@@ -353,14 +346,14 @@ client.on('message', message => {
   if (message.content.startsWith(prefix + 'setwatch')) {
   client.user.setActivity(argresult, {type: 'WATCHING'})
      console.log('test' + argresult);
-    message.channel.sendMessage(`Watch Now: **${argresult}`)
+    message.channel.sendMessage(`Watch Now: **${argresult}**`)
 } 
 
  
   if (message.content.startsWith(prefix + 'setlis')) {
   client.user.setActivity(argresult, {type: 'LISTENING'})
      console.log('test' + argresult);
-    message.channel.sendMessage(`LISTENING Now: **${argresult}`)
+    message.channel.sendMessage(`LISTENING Now: **${argresult}**`)
 } 
 
 
@@ -378,17 +371,18 @@ if (message.content.startsWith(prefix + 'setavatar')) {
 if (message.content.startsWith(prefix + 'setstream')) {
   client.user.setGame(argresult, "https://www.twitch.tv/peery13");
      console.log('test' + argresult);
-    message.channel.sendMessage(`Streaming: **${argresult}`)
+    message.channel.sendMessage(`Streaming: **${argresult}**`)
 } 
 if (message.content.startsWith(prefix + 'setplay')) {
   client.user.setGame(argresult);
      console.log('test' + argresult);
-    message.channel.sendMessage(`Playing: **${argresult}`)
+    message.channel.sendMessage(`Playing: **${argresult}**`)
 } 
 
 
 
 });
+
 
 
 client.login(process.env.BOT_TOKEN); 
