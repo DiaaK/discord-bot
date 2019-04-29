@@ -5,7 +5,7 @@
     "discord",
     "discord"
   ],
-  "repository": "https://github.com/Qusaiiii/heroku-minecraft-nogrok",
+  "repository": "https://github.com/Qusaiiii/discord-bot",
   "env": {
     "BOT_TOKEN": {
       "description": "اكتب توكن البوت هنا",
