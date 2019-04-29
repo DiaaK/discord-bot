@@ -11,7 +11,7 @@
       "description": "اكتب توكن البوت هنا",
       "required": true
     },
-        "AUTHOR ID": {
+        "AUTHOR_ID": {
       "description": "اكتب هنا اي دي الشخص التبيه يتحكم في حالات البوت والصورة والاسم",
       "required": true
 },
