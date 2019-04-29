@@ -10,7 +10,11 @@
     "BOT_TOKEN": {
       "description": "اكتب توكن البوت هنا",
       "required": true
-    }
+    },
+    {
+     "PREFIX": {
+        "description": "حط البرفكس التبيه هنا"
+        "required": true
   },
   "buildpacks": [
     {
